@@ -1,0 +1,6 @@
+{ "scores": 
+ [ { "studentId": 234, "value": 0.75 } ,
+   { "studentId": 245, "value": 2.0 } ,
+   { "studentId": 221, "value": 0.75 }
+ ]
+}

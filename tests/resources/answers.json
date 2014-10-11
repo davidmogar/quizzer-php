@@ -1,0 +1,21 @@
+{ "items":
+ [ { "studentId": 234 ,
+    "answers":
+    [ { "question" : 1, "value": 1 },
+      { "question" : 2, "value": false }
+    ]
+  },
+  { "studentId": 245 ,
+    "answers":
+    [ { "question" : 1, "value": 1 },
+      { "question" : 2, "value": true }
+    ]
+  },
+  { "studentId": 221 ,
+    "answers":
+    [ { "question" : 1, "value": 2 },
+      { "question" : 2, "value": true }
+    ]
+  }
+ ]
+}

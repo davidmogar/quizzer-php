@@ -41,5 +41,7 @@ class AssessmentLoader
         if (!empty($gradesJson)) {
             $assessment->setGrades(AssessmentDeserializer::deserializeGrades($gradesJson));
         }
+
+        return $assessment;
     }
 } 

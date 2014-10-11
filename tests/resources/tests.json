@@ -1,0 +1,13 @@
+{ "tests":
+   [ { "type": "score",
+       "quizz" : "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/quizz1.json",
+   	   "assessment": "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/assessment1.json",
+	   "scores": "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/scores11.json"
+	 },
+	 { "type": "score",
+       "quizz" : "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/quizz1.json",
+   	   "assessment": "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/assessment2.json",
+	   "scores": "http://di002.edv.uniovi.es/~labra/cursos/MIW/POO/Curso1415/Ejercicios/scores12.json"
+	 }
+  ]
+}

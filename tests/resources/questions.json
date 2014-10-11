@@ -1,0 +1,20 @@
+{ "questions":
+   [ { "type": "multichoice",
+       "id" : 1,
+   	   "questionText": "Scala fue creado por...",
+	   "alternatives": [
+	     { "text": "Martin Odersky",   "code": 1, "value": 1 },
+		 { "text": "James Gosling",    "code": 2, "value": -0.25 },
+		 { "text": "Guido van Rossum", "code": 3, "value": -0.25 }
+		]
+	 },
+	{ "type" : "truefalse",
+	  "id" : 2,
+	  "questionText": "El creador de Ruby es Yukihiro Matsumoto",
+	  "correct": true,
+	  "valueOK": 1,
+	  "valueFailed": -0.25,
+	  "feedback": "Yukihiro Matsumoto es el principal desarrollador de Ruby desde 1996"
+	}
+ ]
+}
