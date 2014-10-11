@@ -1,51 +1,50 @@
 <?php
 
-namespace {
-    class MultichoiceQuestion extends Question
+require_once 'Question.php';
+
+class MultichoiceQuestion extends Question
+{
+    private $alternatives;
+
+    function __construct($id, $text)
     {
-        private $alternatives;
+        parent::__construct($id, $text);
 
-        function __construct($id, $text)
-        {
-            parent::__construct($id, $text);
+        $this->alternatives = array();
+    }
 
-            $this->alternatives = array();
-        }
+    function addAlternative($id, $text, $value)
+    {
+        $this->alternatives[$id] = new Alternative($id, $text, $value);
+    }
 
-        function addAlternative($id, $text, $value)
-        {
-            $this->alternatives[$id] = new Alternative($id, $text, $value);
-        }
+    public function getScore(Answer $answer)
+    {
+        $score = 0;
 
-        protected function getScore(Answer $answer)
-        {
-            $score = 0;
+        if (!empty($answer)) {
+            $answerValue = $answer->getValue();
 
-            if (!empty($answer)) {
-                $answerValue = $answer->getValue();
-
-                if (isset($alternatives[$answerValue])) {
-                    $score = $alternatives[$answerValue]->value;
-                }
+            if (isset($this->alternatives[$answerValue])) {
+                $score = $this->alternatives[$answerValue]->value;
             }
-
-            return $score;
         }
+
+        return $score;
     }
 }
 
-namespace MultichoiceQuesiton {
-    class Alternative
+class Alternative
+{
+    var $id;
+    var $text;
+    var $value;
+
+    function __construct($id, $text, $value)
     {
-        var $id;
-        var $text;
-        var $value;
-
-        function __construct($id, $text, $value)
-        {
-            $this->id = $id;
-            $this->text = $text;
-            $this->value = $value;
-        }
+        $this->id = $id;
+        $this->text = $text;
+        $this->value = $value;
     }
 }
+

@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Question.php';
+
 class TrueFalseQuestion extends Question
 {
     private $correct;
@@ -12,7 +14,7 @@ class TrueFalseQuestion extends Question
         parent::__construct($id, $text);
     }
 
-    protected function getScore(Answer $answer)
+    public function getScore(Answer $answer)
     {
         $score = 0;
 

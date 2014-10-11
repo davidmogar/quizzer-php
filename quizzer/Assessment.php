@@ -22,7 +22,7 @@ class Assessment
         }
     }
 
-    public function calculateStudentsGrade($studentId)
+    public function calculateStudentGrade($studentId)
     {
         $grade = 0;
 
@@ -30,7 +30,7 @@ class Assessment
             foreach($this->answers[$studentId] as $answer) {
                 $questionId = $answer->getQuestionId();
 
-                if (isset($$this->questions[$questionId])) {
+                if (isset($this->questions[$questionId])) {
                     $grade += $this->questions[$questionId]->getScore($answer);
                 }
             }
@@ -44,18 +44,18 @@ class Assessment
         $valid = false;
 
         if (!empty($grade)) {
-            $valid = $grade->getGrade() == calculateStudentsGrade($grade->getStudentId());
+            $valid = $grade->getGrade() == $this->calculateStudentGrade($grade->getStudentId());
         }
 
         return $valid;
     }
 
-    public function validaGrades()
+    public function validateGrades()
     {
         $valid = true;
 
         foreach ($this->grades as $key => $value) {
-            if ($valid = $this->validaGrade($value)) {
+            if (!($valid = $this->validateGrade($value))) {
                 break;
             }
         }

@@ -11,7 +11,7 @@ abstract class Question
         $this->text = $text;
     }
 
-    abstract protected function getScore(Answer $answer);
+    abstract public function getScore(Answer $answer);
 
     public function getId()
     {
