@@ -5,7 +5,7 @@ class Grade
     private $studentId;
     private $grade;
 
-    function __construct($grade, $studentId)
+    function __construct($studentId, $grade)
     {
         $this->grade = $grade;
         $this->studentId = $studentId;

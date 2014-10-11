@@ -15,17 +15,39 @@ class Assessment
 
     public function calculateGrades()
     {
+        $this->grades = array();
 
+        foreach($this->answers as $key => $value) {
+            $this->grades[$key] = new Grade($key, $this->calculateStudentGrade($key));
+        }
     }
 
     public function calculateStudentsGrade($studentId)
     {
+        $grade = 0;
 
+        if (isset($this->answers[$studentId])) {
+            foreach($this->answers[$studentId] as $answer) {
+                $questionId = $answer->getQuestionId();
+
+                if (isset($$this->questions[$questionId])) {
+                    $grade += $this->questions[$questionId]->getScore($answer);
+                }
+            }
+        }
+
+        return $grade;
     }
 
     public function validateGrade(Grade $grade)
     {
-        $computedGrade = 0;
+        $valid = false;
+
+        if (!empty($grade)) {
+            $valid = $grade->getGrade() == calculateStudentsGrade($grade->getStudentId());
+        }
+
+        return $valid;
     }
 
     public function validaGrades()
