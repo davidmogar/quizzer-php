@@ -1,5 +1,7 @@
 <?php
 
+require_once 'quizzer/domain/Answer.php';
+
 abstract class Question
 {
     protected $text;
