@@ -56,8 +56,9 @@ class AssessmentDeserializer {
 
                     if ($question->type == 'multichoice') {
                         $newQuestion = self::createMultichoiceQuestion($question);
-
-                    } else if ($question->type == 'truefalse') {
+                    } else if ($question->type == 'numerical') {
+                        $newQuestion = self::createNumericalQuestion($question);
+                    } if ($question->type == 'truefalse') {
                         $newQuestion = self::createTruefalseQuestion($question);
                     }
 
@@ -84,6 +85,20 @@ class AssessmentDeserializer {
         }
 
         return $multichoice;
+    }
+
+    private static function createNumericalQuestion($question) {
+        $numerical = null;
+
+        if (isset($question->correct) && isset($question->valueOK) && isset($question->valueFailed)) {
+            $numerical = new NumericalQuestion($question->id, $question->questionText);
+            $numerical->setCorrect($question->correct);
+            $numerical->setValueCorrect($question->valueOK);
+            $numerical->setValueIncorrect($question->valueFailed);
+
+        }
+
+        return $numerical;
     }
 
     private static function createTrueFalseQuestion($question) {
