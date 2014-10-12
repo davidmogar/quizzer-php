@@ -19,8 +19,7 @@ class TrueFalseQuestion extends Question
         $score = 0;
 
         if (!empty($answer)) {
-            $answerAsBoolean = strtolower($answer->getValue()) === 'true'? true : false;
-            if ($answerAsBoolean == $this->correct) {
+            if ($answer->getValue() == $this->correct) {
                 $score = $this->valueCorrect;
             } else {
                 $score = $this->valueIncorrect;
