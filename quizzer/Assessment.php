@@ -17,7 +17,7 @@ class Assessment
     {
         $this->grades = array();
 
-        foreach($this->answers as $key => $value) {
+        foreach ($this->answers as $key => $value) {
             $this->grades[$key] = new Grade($key, $this->calculateStudentGrade($key));
         }
     }
@@ -27,7 +27,7 @@ class Assessment
         $grade = 0;
 
         if (isset($this->answers[$studentId])) {
-            foreach($this->answers[$studentId] as $answer) {
+            foreach ($this->answers[$studentId] as $answer) {
                 $questionId = $answer->getQuestionId();
 
                 if (isset($this->questions[$questionId])) {
@@ -37,6 +37,29 @@ class Assessment
         }
 
         return $grade;
+    }
+
+    public function getStatistics()
+    {
+        $statistics = array();
+
+        foreach ($this->answers as $key => $value) {
+            foreach ($this->answers[$key] as $answer) {
+                $questionId = $answer->getQuestionId();
+
+                if (isset($this->questions[$questionId])) {
+                    if ($this->questions[$questionId]->getScore($answer) > 0) {
+                        if (isset($statistics[$questionId])) {
+                            $statistics[$questionId] += 1;
+                        } else {
+                            $statistics[$questionId] = 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        return $statistics;
     }
 
     public function validateGrade(Grade $grade)

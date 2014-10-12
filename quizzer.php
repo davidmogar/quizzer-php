@@ -20,22 +20,21 @@ if (isset($_POST['questions']) && isset($_POST['answers'])) {
 
 function calculateGrades($questionsUrl, $answersUrl)
 {
-    $grades = array();
+    $assessment = null;
 
     try {
         $assessment = AssessmentLoader::loadAssessmentFromUrls($questionsUrl, $answersUrl, null);
         $assessment->calculateGrades();
-        $grades = $assessment->getGrades();
     } catch (Exception $e) {
         // Return default value
     }
 
-    return $grades;
+    return $assessment;
 }
 
 function parseArguments()
 {
-    $options = getopt("q:a:o:t:h");
+    $options = getopt("q:a:o:t:sh");
 
     if (isset($options['h'])) {
         showHelp();
@@ -43,8 +42,12 @@ function parseArguments()
         $valid = validateAssessments($options['t']);
         echo $valid? 'All tests OK' : 'Tests failed';
     } else if (isset($options['q']) && isset($options['a'])) {
-        $grades = calculateGrades($options['q'], $options['a']);
-        var_dump($grades);
+        $assessment = calculateGrades($options['q'], $options['a']);
+
+        if (isset($options['s'])) {
+            var_dump($assessment->getStatistics());
+        }
+
     } else {
         showHelp();
     }
@@ -57,6 +60,7 @@ function showHelp()
     echo " -h         Show this help\n";
     echo " -o         Generate output\n";
     echo " -q <arg>   URL to the questions file\n";
+    echo " -s         Show questions statistics\n";
     echo " -t <arg>   Validate assessments in tests file\n";
 }
 

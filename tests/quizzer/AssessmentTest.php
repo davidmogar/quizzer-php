@@ -47,6 +47,12 @@ class AssessmentTest extends PHPUnit_Framework_TestCase
             new Answer(3, false)
         );
 
+        $answers[3] = array(
+            new Answer(1, 2),
+            new Answer(2, 2),
+            new Answer(3, true)
+        );
+
         $this->assessment->setQuestions($questions);
         $this->assessment->setAnswers($answers);
     }
@@ -55,27 +61,39 @@ class AssessmentTest extends PHPUnit_Framework_TestCase
     {
         $this->assessment->calculateGrades();
 
-        $this->assertTrue(count($this->assessment->getGrades()) == 2, 'Unexpected grades size');
+        $this->assertTrue(count($this->assessment->getGrades()) == 3, 'Unexpected grades size');
         $this->assertEquals($this->assessment->getGrades()[1]->getGrade(), 2.75,
-                'Unexpected grade value for id 1', 0.05);
+            'Unexpected grade value for id 1', 0.05);
         $this->assertEquals($this->assessment->getGrades()[2]->getGrade(), -0.75,
             'Unexpected grade value for id 2', 0.05);
     }
 
-    public function testCalculateStudentGrade() {
+    public function testCalculateStudentGrade()
+    {
         $this->assertEquals($this->assessment->calculateStudentGrade(1), 2.75, 'Unexpected grade value for id 1', 0.05);
         $this->assertEquals($this->assessment->calculateStudentGrade(2), -0.75,
-                'Unexpected grade value for id 2', 0.05);
+            'Unexpected grade value for id 2', 0.05);
     }
 
-    public function testValidateGrade() {
+    public function testGetStatistics()
+    {
+        $statistics = $this->assessment->getStatistics();
+
+        $this->assertTrue($statistics[1] == 2, 'Unexpected value for question 1 statistics');
+        $this->assertTrue($statistics[2] == 1, 'Unexpected value for question 2 statistics');
+        $this->assertTrue($statistics[3] == 2, 'Unexpected value for question 3 statistics');
+    }
+
+    public function testValidateGrade()
+    {
         $this->assertTrue($this->assessment->validateGrade(new Grade(1, 2.75)),
-                'Unexpected grade validation result for id 1');
+            'Unexpected grade validation result for id 1');
         $this->assertFalse($this->assessment->validateGrade(new Grade(1, 0.75)),
-                'Unexpected grade validation result for id 2');
+            'Unexpected grade validation result for id 2');
     }
 
-    public function testValidateGrades() {
+    public function testValidateGrades()
+    {
         $grades = array(
             1 => new Grade(1, 2.75),
             2 => new Grade(2, -0.75)
