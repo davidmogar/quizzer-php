@@ -8,7 +8,7 @@ This is the PHP version of Quizzer, a simple application to parse JSON files wit
 
 Quizzer is a command line application and can be executed with the next options:
 - `-a <arg>`: Sets the URL to the answers file.
-- `-h**`: Show the help message of the app.
+- `-h`: Show the help message of the app.
 - `-o`: Indicate that we want to retrive the output of the action on the standard output.
 - `-q <arg>`: Sets the URL to the questions file.
 - `-t <arg>`: Validate assessments in a tests file.
