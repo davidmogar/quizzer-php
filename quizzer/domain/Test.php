@@ -6,11 +6,11 @@ class Test
     private $answersUrl;
     private $gradesUrl;
 
-    function __construct($answersUrl, $gradesUrl, $questionsUrl)
+    function __construct($questionsUrl, $answersUrl, $gradesUrl)
     {
+        $this->questionsUrl = $questionsUrl;
         $this->answersUrl = $answersUrl;
         $this->gradesUrl = $gradesUrl;
-        $this->questionsUrl = $questionsUrl;
     }
 
     public function getAnswersUrl()
