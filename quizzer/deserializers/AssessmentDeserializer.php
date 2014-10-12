@@ -2,6 +2,8 @@
 
 require_once 'quizzer/domain/Answer.php';
 require_once 'quizzer/domain/Grade.php';
+require_once 'quizzer/domain/questions/MultichoiceQuestion.php';
+require_once 'quizzer/domain/questions/TrueFalseQuestion.php';
 
 class AssessmentDeserializer {
 

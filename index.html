@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quizzer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<header>
+    <h1>Welcome to Quizzer</h1>
+    <p>Paste in the fields below the contents of your JSONs (questions and answer) and click over the button
+        "Calculate
+        grades" to generate a JSON with the grades of your students.</p>
+</header>
+<section>
+    <form action="quizzer.php" method="post">
+        <textarea name="questions" placeholder="Questions JSON file content" required></textarea>
+        <textarea name="answers" placeholder="Answers JSON file content" required></textarea>
+        <br/>
+        <input type="submit" value="Calculate grades" />
+    </form>
+</section>
+</body>
+</html>

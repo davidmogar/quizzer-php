@@ -7,7 +7,7 @@ class AssessmentLoader
 {
     public static function loadAssessmentFromUrls($questionsUrl, $answersUrl, $gradesUrl)
     {
-        if (empty($questionsUrl) || empty($answersUrl)) {
+        if (isset($questionsUrl) || isset($answersUrl)) {
             throw new Exception('Questions and answers URLs cannot be null');
         }
 
@@ -24,7 +24,7 @@ class AssessmentLoader
 
     public static function loadAssessmentFromJsons($questionsJson, $answersJson, $gradesJson)
     {
-        if (empty($questionsUrl) || empty($answersUrl)) {
+        if (isset($questionsUrl) || isset($answersUrl)) {
             throw new Exception('Questions and answers URLs cannot be null');
         }
 
