@@ -55,8 +55,7 @@ class Assessment
         $valid = true;
 
         foreach ($this->grades as $key => $value) {
-            $valid = $this->validateGrade($value);
-            if (!$valid) {
+            if (!($valid = $this->validateGrade($value))) {
                 break;
             }
         }

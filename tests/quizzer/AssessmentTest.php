@@ -29,13 +29,13 @@ class AssessmentTest extends PHPUnit_Framework_TestCase
         $questions[2] = $truefalse;
 
         $answers[1] = array(
-            new Answer(1, "2"),
-            new Answer(2, "true")
+            new Answer(1, 2),
+            new Answer(2, true)
         );
 
         $answers[2] = array(
-            new Answer(1, "0"),
-            new Answer(2, "false")
+            new Answer(1, 1),
+            new Answer(2, false)
         );
 
         $this->assessment->setQuestions($questions);
