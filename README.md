@@ -7,15 +7,15 @@ This is the PHP version of Quizzer, a simple application to parse JSON files wit
 ##Usage
 
 Quizzer is a command line application and can be executed with the next options:
-- `-a or --answers <arg>`: Sets the URL to the answers file.
-- `-h or --help**`: Show the help message of the app.
-- `-o or --output`: Indicate that we want to retrive the output of the action on the standard output.
-- `-q or --questions <arg>`: Sets the URL to the questions file.
-- `-t or --tests <arg>`: Validate assessments in a tests file.
+- `-a <arg>`: Sets the URL to the answers file.
+- `-h**`: Show the help message of the app.
+- `-o`: Indicate that we want to retrive the output of the action on the standard output.
+- `-q <arg>`: Sets the URL to the questions file.
+- `-t <arg>`: Validate assessments in a tests file.
 
 ##Web service
 
-The app uses can be used as a web server if it is launched without arguments. In this mode you can navitate to [localhost:4567](http://localhost:4567) what would return the next form that can be used to generate grades.
+Along with the the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.php to retrieve the result.
 
 ![Quizzer](http://davidmogar.com/uploads/github/quizzer.png)
 
