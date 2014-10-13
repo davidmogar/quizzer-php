@@ -9,9 +9,12 @@ This is the PHP version of Quizzer, a simple application to parse JSON files wit
 Quizzer is a command line application and can be executed with the next options:
 - `-a <arg>`: Sets the URL to the answers file.
 - `-h`: Show the help message of the app.
-- `-o`: Indicate that we want to retrive the output of the action on the standard output.
+- `-o <arg>`: Generate output in the specified format (json or xml)"
 - `-q <arg>`: Sets the URL to the questions file.
+- `-s`: Show questions statistics.
 - `-t <arg>`: Validate assessments in a tests file.
+
+As an example, the command `quizzer.php -q questions.json -a answers.json -o xml -s` will generate grades and statistics for the given assessment data and will show the result as xml files in the standard output.
 
 ##Web service
 
@@ -92,6 +95,24 @@ Grades files store the grade obtained by an student in the assessment.
     { "studentId": 234, "value": 0.75 } ,
     { "studentId": 245, "value": 2.0 } ,
     { "studentId": 221, "value": 0.75 }
+  ]
+}
+```
+
+###Statistics
+Quizzer can generate statistics for the current assessment, showing how many correct or partially correct answers received the assessment's questions. The output would be similar to the next json file:
+```json
+{
+  "items":
+  [
+    {
+      "questionId": 1,
+      "correctAnswers": 2
+    },
+    {
+      "questionId": 2,
+      "correctAnswers": 2
+    }
   ]
 }
 ```
