@@ -67,7 +67,7 @@ function showHelp()
     echo "usage: quizzer [options]\n";
     echo " -a <arg>   URL to the answers file\n";
     echo " -h         Show this help\n";
-    echo " -o         Generate output\n";
+    echo " -o <arg>   Generate output in the specified format (json or xml)\n";
     echo " -q <arg>   URL to the questions file\n";
     echo " -s         Show questions statistics\n";
     echo " -t <arg>   Validate assessments in tests file\n";
