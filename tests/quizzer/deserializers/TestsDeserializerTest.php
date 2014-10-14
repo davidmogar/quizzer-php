@@ -1,5 +1,7 @@
 <?php
 
+require_once 'quizzer/deserializers/TestsDeserializer.hh';
+
 class TestsDeserializerTest extends PHPUnit_Framework_TestCase
 {
     private static $testsUrl = 'tests/resources/tests.json';
