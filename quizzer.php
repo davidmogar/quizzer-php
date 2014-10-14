@@ -4,12 +4,14 @@ require_once 'quizzer/loaders/AssessmentLoader.php';
 require_once 'quizzer/loaders/TestsLoader.php';
 require_once 'quizzer/serializers/AssessmentSerializer.php';
 
-if (isset($_POST['questions']) && isset($_POST['answers'])) {
-    $questions = $_POST['questions'];
-    $answers = $_POST['answers'];
-    $assessment = AssessmentLoader::loadAssessmentFromJsons($questions, $answers, null);
-    $assessment->calculateGrades();
-    echo AssessmentSerializer::serializeGrades($assessment->getGrades(), 'json');
+if (php_sapi_name() != 'cli') {
+    if (isset($_POST['questions']) && isset($_POST['answers'])) {
+        $questions = $_POST['questions'];
+        $answers = $_POST['answers'];
+        $assessment = AssessmentLoader::loadAssessmentFromJsons($questions, $answers, null);
+        $assessment->calculateGrades();
+        echo AssessmentSerializer::serializeGrades($assessment->getGrades(), 'json');
+    }
 } else {
     try {
         parseArguments();
