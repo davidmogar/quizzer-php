@@ -42,7 +42,7 @@ function parseArguments()
         showHelp();
     } else if (isset($options['t'])) {
         $valid = validateAssessments($options['t']);
-        echo $valid? 'All tests OK' : 'Tests failed';
+        echo $valid? 'All tests OK\n' : 'Tests failed\n';
     } else if (isset($options['q']) && isset($options['a'])) {
         $assessment = calculateGrades($options['q'], $options['a']);
 
