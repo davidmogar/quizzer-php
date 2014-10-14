@@ -2,7 +2,7 @@
 
 require_once 'quizzer/deserializers/AssessmentDeserializer.php';
 
-class AssessmentDeserializerTest extends \PHPUnit_Framework_TestCase
+class AssessmentDeserializerTest extends PHPUnit_Framework_TestCase
 {
     private static $questionsJson = '{ "questions": [ { "type": "multichoice", "id" : 1,
             "questionText": "Scala fue creado por...", "alternatives": [ { "text": "Martin Odersky", "code": 1,
