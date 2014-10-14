@@ -1,9 +1,4 @@
 <phpunit backupGlobals="true">
-    <filter>
-        <whitelist>
-            <direcory>/src</direcory>
-        </whitelist>
-    </filter>
     <testsuite>
         <directory>./tests</directory>
     </testsuite>
