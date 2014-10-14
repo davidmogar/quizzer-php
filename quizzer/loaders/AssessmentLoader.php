@@ -15,7 +15,7 @@ class AssessmentLoader
         $answersJson = file_get_contents($answersUrl);
 
         $gradesJson = null;
-        if (!isset($gradesUrl)) {
+        if (!empty($gradesUrl)) {
             $gradesJson = file_get_contents($gradesUrl);
         }
 
