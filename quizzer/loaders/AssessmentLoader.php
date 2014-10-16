@@ -8,9 +8,9 @@ class AssessmentLoader
     /**
      * Returns a new Assessment created with the data obtained from the URLs received as arguments.
      *
-     * @param $questionsUrl URL to the questions file
-     * @param $answersUrl URL to the answers file
-     * @param $gradesUrl URL to the grades file
+     * @param $questionsUrl string URL to the questions file
+     * @param $answersUrl string URL to the answers file
+     * @param $gradesUrl string URL to the grades file
      * @return Assessment an Assessment with the data from the URLs received as arguments
      * @throws Exception if there is an error while fetching content from the given URLs
      */
@@ -34,9 +34,9 @@ class AssessmentLoader
     /**
      * Returns a new Assessment created with the data obtained from the JSONs received as arguments.
      *
-     * @param $questionsJson JSON representation of the questions file
-     * @param $answersJson JSON representation of the answers file
-     * @param $gradesJson JSON representation of the grades file
+     * @param $questionsJson string JSON representation of the questions file
+     * @param $answersJson string JSON representation of the answers file
+     * @param $gradesJson string JSON representation of the grades file
      * @return Assessment an Assessment with the data from the JSONs received as arguments
      * @throws Exception if questions or answers json arguments are null
      */
@@ -52,9 +52,9 @@ class AssessmentLoader
     /**
      * Creates and returns an Assessment with the data obtained after deserialize the given JSONs.
      *
-     * @param $questionsJson JSON representation of the questions file
-     * @param $answersJson JSON representation of the answers file
-     * @param $gradesJson JSON representation of the grades file
+     * @param $questionsJson string JSON representation of the questions file
+     * @param $answersJson string JSON representation of the answers file
+     * @param $gradesJson string JSON representation of the grades file
      * @return Assessment an Assessment with the data from the JSONs received as arguments
      */
     private static function createAssessment($questionsJson, $answersJson, $gradesJson)
