@@ -18,7 +18,7 @@ As an example, the command `quizzer.php -q questions.json -a answers.json -o xml
 
 ##Web service
 
-Along with the the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.php to retrieve the result.
+Along with the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.php to retrieve the result.
 
 ![Quizzer](http://davidmogar.com/uploads/github/quizzer.png)
 
