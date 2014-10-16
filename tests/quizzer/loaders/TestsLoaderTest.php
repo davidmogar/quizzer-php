@@ -6,7 +6,7 @@ class TestsLoaderTest extends PHPUnit_Framework_TestCase
 {
     private static $testsUrl = 'tests/resources/tests.json';
 
-    public function testLoadAssessmentFromUrls()
+    public function testLoadTests()
     {
         $this->assertTrue(file_exists(self::$testsUrl), "Missing tests file");
 

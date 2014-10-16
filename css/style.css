@@ -9,8 +9,14 @@ body {
     text-align: center;
 }
 
+pre {
+    line-height: 1em;
+    text-align: left;
+}
+
 h1 {
     font-size: 3em;
+    line-height: 1em;
     margin-bottom: 1em;
 }
 
