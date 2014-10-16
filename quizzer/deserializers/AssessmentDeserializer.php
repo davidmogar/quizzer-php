@@ -7,6 +7,12 @@ require_once 'quizzer/domain/questions/TrueFalseQuestion.php';
 
 class AssessmentDeserializer {
 
+    /**
+     * Deserializes the JSON representation received as arguments to a map of student ids to Answer objects.
+     *
+     * @param $json JSON representation of the answers objects
+     * @return array an array of student ids to Answer objects
+     */
     public static function deserializeAnswers($json) {
         $data = json_decode($json);
         $answers = array();
@@ -30,6 +36,12 @@ class AssessmentDeserializer {
         return $answers;
     }
 
+    /**
+     * Deserializes the JSON representation received as arguments to a map of student ids to Grade objects.
+     *
+     * @param $json JSON representation of the grades objects
+     * @return array an array of student ids to Grade objects
+     */
     public static function deserializeGrades($json) {
         $data = json_decode($json);
         $grades = array();
@@ -45,6 +57,12 @@ class AssessmentDeserializer {
         return $grades;
     }
 
+    /**
+     * Deserializes the JSON representation received as arguments to a map of question ids to Question objects.
+     *
+     * @param $json JSON representation of the questions objects
+     * @return array an array of question ids to Question objects
+     */
     public static function deserializeQuestions($json) {
         $data = json_decode($json);
         $questions = array();
