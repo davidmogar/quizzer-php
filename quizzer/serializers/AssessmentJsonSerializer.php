@@ -41,6 +41,6 @@ class AssessmentJsonSerializer
             $items[] = $item;
         }
 
-        return '{"statistics": ' . json_encode($items, JSON_PRETTY_PRINT) . '}';
+        return '{"items": ' . json_encode($items, JSON_PRETTY_PRINT) . '}';
     }
 } 
