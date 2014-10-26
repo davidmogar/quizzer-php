@@ -2,7 +2,7 @@
 
 [![Build Status](https://magnum.travis-ci.com/davidmogar/quizzer-php.svg?token=wmck5BREt8bmqUpsNF4v)](https://magnum.travis-ci.com/davidmogar/quizzer-php)
 
-This is the PHP version of Quizzer, a simple application to parse JSON files with questons and answers of students to these questions to genereate and/or validate grades for all the students.
+This is the PHP version of Quizzer, a simple application to parse JSON files with questions and answers of students to these questions to genereate and/or validate grades for all the students.
 
 ##Usage
 
