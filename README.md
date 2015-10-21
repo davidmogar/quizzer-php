@@ -20,7 +20,7 @@ As an example, the arguments `-q questions.json -a answers.json -o xml -s` will 
 
 Along with the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.php to retrieve the result.
 
-![Quizzer](http://davidmogar.com/uploads/github/quizzer.png)
+![Quizzer](http://davidmogar.leakedbits.com/uploads/github/quizzer.png)
 
 
 ##JSON files
