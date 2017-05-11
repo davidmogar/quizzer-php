@@ -1,10 +1,10 @@
-#Quizzer
+# Quizzer
 
 [![Build Status](https://travis-ci.org/davidmogar/quizzer-php.svg)](https://travis-ci.org/davidmogar/quizzer-php)
 
 This is the PHP version of Quizzer, a simple application to parse JSON files with questions and answers of students to these questions to genereate and/or validate grades for all the students.
 
-##Usage
+## Usage
 
 Quizzer is a command line application and can be executed with the next options:
 - `-a <arg>`: Sets the URL to the answers file.
@@ -16,18 +16,18 @@ Quizzer is a command line application and can be executed with the next options:
 
 As an example, the arguments `-q questions.json -a answers.json -o xml -s` will generate grades and statistics for the given assessment data and will show the result as xml files in the standard output.
 
-##Web service
+## Web service
 
 Along with the app there is a webpage (index.html) that contains a form that can be used to generate grades. The input is sent to quizzer.php to retrieve the result.
 
 ![Quizzer](http://davidmogar.leakedbits.com/uploads/github/quizzer.png)
 
 
-##JSON files
+## JSON files
 
 Quizzer thre kind of files: questions, answers and grades files. The next sections show an example of this files.
 
-###Questions
+### Questions
 Questions files are used to store all the questions of an assessment. There are two types of questions: Multichoice and True/False questions.
 
 ```json
@@ -55,7 +55,7 @@ Questions files are used to store all the questions of an assessment. There are 
 }
 ```
 
-###Answers
+### Answers
 Answers file store all the answers submited by the students.
 
 ```json
@@ -86,7 +86,7 @@ Answers file store all the answers submited by the students.
 }
 ```
 
-###Grades
+### Grades
 Grades files store the grade obtained by an student in the assessment.
 
 ```json
@@ -99,7 +99,7 @@ Grades files store the grade obtained by an student in the assessment.
 }
 ```
 
-###Statistics
+### Statistics
 Quizzer can generate statistics for the current assessment, showing how many correct or partially correct answers received the assessment's questions. The output would be similar to the next json file:
 ```json
 {
@@ -117,7 +117,7 @@ Quizzer can generate statistics for the current assessment, showing how many cor
 }
 ```
 
-###Tests
+### Tests
 There is an extra file used to test a bunch of assessments at the same time. You can check the structure of this file below:
 
 ```json
